@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테투리가 있는 탭 메뉴</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- JS -->
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <!--[if IE 9]><body class="tab01 ie9"><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--><body class="tab01"><!--<![endif]-->
+    <main class="main">
+      <div class="container">
+        <h2>진행 중인 이벤트</h2>
+        <div class="tab-lst">
+          <nav>
+            <ul>
+              <li class="on"><button>진행 중인 이벤트</button></li>
+              <li><button>지난 이벤트</button></li>
+              <li><button>당첨자 발표</button></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="tab-cont">
+          <ul>
+            <li class="on">content1</li>
+            <li>content2</li>
+            <li>content3</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

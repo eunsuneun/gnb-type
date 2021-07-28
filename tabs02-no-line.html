@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아래 테두리가 없는 탭 메뉴</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- JS -->
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <!--[if IE 9]><body class="tab02 ie9"><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--><body class="tab02"><!--<![endif]-->
+    <main class="main">
+      <div class="container">
+        <div class="tit-group">
+          <h2>다운로드</h2>
+          <h3 class="hide">현재 위치 안내</h3>
+          <ul class="breadcrumbs">
+            <li class="home">
+              <a href="#n"><span class="hide">홈</span></a>
+            </li>
+            <li><a href="#n">고객지원</a></li>
+            <li class="current"><a href="#n">다운로드</a></li>
+          </ul>
+        </div>
+        <div class="tab-group">
+          <nav>
+            <ul class="tab-lst">
+              <li class="itm on"><button>윈도우용 접속기</button></li>
+              <li class="itm"><button>맥용 접속기</button></li>
+              <li class="itm"><button>모바일앱</button></li>
+            </ul>
+          </nav>
+          <ul class="tab-conts">
+            <li class="itm on">content1</li>
+            <li class="itm">content2</li>
+            <li class="itm">content3</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

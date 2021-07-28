@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+/* -----------------
+  layout
+  ----------------- */
+/* layout */
+.main {
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    @include p {
+      margin: 0 50px;
+    }
+    @include t {
+      margin: 0 40px;
+    }
+    @include m {
+      margin: 0 20px;
+    }
+  }
+}
+
+/* common */
+.skip-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+  > a {
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    padding: 0 25px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    line-height: 50px;
+    &:focus,
+    &:active {
+      overflow: hidden;
+      top: 0;
+      z-index: 101;
+      text-decoration: none;
+    }
+  }
+}
+
+.hide {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -1,0 +1,364 @@
+/* -----------------
+  TAB
+  ----------------- */
+
+// 테두리가 있는 탭 메뉴 - type01
+.tab01 {
+  h2 {
+    padding: 90px 0 60px;
+    line-height: 1;
+    text-align: center;
+    font-size: 40px;
+    color: #333333;
+  }
+  .tab-lst {
+    margin: 0 0 14px;
+    ul {
+      display: flex;
+      li {
+        flex: 1;
+        position: relative;
+        border: 1px solid #ddd;
+        margin: 0 0 0 -1px;
+        overflow: hidden;
+        button {
+          width: 100%;
+          background: #f9f9f9;
+          line-height: 55px;
+          font-size: 17px;
+        }
+        &:first-child {
+          border-radius: 10px 0 0 10px;
+        }
+        &:last-child {
+          border-radius: 0 10px 10px 0;
+        }
+
+        &.on {
+          z-index: 2;
+          border-color: #ed008c;
+
+          button {
+            background: #ed008c;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .tab-cont {
+    ul {
+      li {
+        display: none;
+        background: #e5e5e5;
+        line-height: 50vh;
+        text-align: center;
+        font-size: 30px;
+        &.on {
+          display: block;
+        }
+      }
+    }
+  }
+  &.ie9 {
+    .tab-lst {
+      ul {
+        @include clearfix;
+        li {
+          float: left;
+          width: 33.333%;
+        }
+        &.no2 {
+          li {
+            width: 50%;
+          }
+          &.no4 {
+            li {
+              width: 25%;
+            }
+          }
+          &.no5 {
+            li {
+              width: 20%;
+            }
+          }
+          &.no6 {
+            li {
+              width: 16.666%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 아래 테두리가 없는 탭 메뉴 - type02
+.tab02 {
+  .container {
+    margin-top: 100px;
+    .tit-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 1;
+      h2 {
+        font-size: 25px;
+        color: #333;
+      }
+      .breadcrumbs {
+        display: flex;
+        a {
+          font-size: 13px;
+          color: #555;
+        }
+        li {
+          & ~ li {
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 19px;
+              height: 12px;
+              background: url(../../img/bu_arrow_right2.png) no-repeat center;
+            }
+          }
+        }
+        .home {
+          a {
+            display: inline-block;
+            width: 13px;
+            height: 12px;
+            background: url(../../img/ico_home2.png) no-repeat center;
+          }
+        }
+        .current {
+          a {
+            color: #496fc1;
+          }
+        }
+      }
+    }
+    .tab-group {
+      .tab-lst {
+        display: flex;
+        padding: 35px 0 70px;
+        .itm {
+          flex: 1;
+          position: relative;
+          border: 1px solid #d7d7d7;
+          border-bottom: 1px solid #496fc1;
+          margin: 0 0 0 -1px;
+          button {
+            width: 100%;
+            line-height: 47px;
+            background: #f9f9f9;
+            color: #727272;
+          }
+          &.on {
+            z-index: 2;
+            border-color: #496fc1;
+            border-bottom: none;
+            button {
+              background: #fff;
+            }
+          }
+        }
+      }
+      .tab-conts {
+        .itm {
+          display: none;
+          background: #f9f9f9;
+          line-height: 50vh;
+          text-align: center;
+          font-size: 50px;
+          &.on {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &.ie9 {
+    .tit-group {
+      @include clearfix;
+      h2 {
+        float: left;
+      }
+      .breadcrumbs {
+        float: right;
+        li {
+          float: left;
+        }
+      }
+    }
+    .tab-lst {
+      .itm {
+        float: left;
+        width: 33.3333%;
+        &.no2 {
+          width: 50%;
+        }
+        &.no4 {
+          width: 25%;
+        }
+        &.no5 {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
+// 뎁스로 구성된 탭 메뉴 - type03
+.tab03 {
+  .tit-wrap {
+    padding: 50px 20px;
+    .tit {
+      font-size: 27px;
+      color: #1a1a1a;
+      span {
+        font-size: 14px;
+        font-weight: 100;
+        color: #767676;
+      }
+    }
+  }
+  .tab-wrap {
+    .depth1 {
+      display: flex;
+      position: relative;
+      height: 52px;
+      margin-bottom: 70px;
+      border-bottom: 1px solid #333;
+      > li {
+        > button {
+          min-width: 200px;
+          margin: 0 0 0 -1px;
+          padding: 0 15px;
+          line-height: 50px;
+          border: 1px solid #ccc;
+          border-radius: 10px 10px 0 0;
+          border-bottom: 0;
+          font-size: 16px;
+        }
+        .depth2 {
+          display: none;
+          @include position($l: 0, $r: 0);
+          border-bottom: 1px solid #e2e2e2;
+          li {
+            padding: 0 15px;
+            button {
+              line-height: 50px;
+              font-size: 15px;
+              color: #767676;
+            }
+            &.on button {
+              position: relative;
+              color: green;
+              &:after {
+                content: "";
+                @include position($b: 12px);
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: green;
+              }
+            }
+          }
+        }
+        &.on {
+          z-index: 2;
+          > button {
+            border-color: #333;
+            border-bottom: 1px solid #fff;
+          }
+          .depth2 {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .tab-conts {
+    .depth1-cont {
+      display: none;
+      background: #eee;
+      line-height: 50vh;
+      text-align: center;
+      font-size: 50px;
+      .depth2-cont {
+        display: none;
+        &.on {
+          display: block;
+        }
+      }
+      &.on {
+        display: block;
+      }
+    }
+  }
+}
+
+// 두 줄 이상인 탭 메뉴 - type04
+.tab04 {
+  .tit {
+    line-height: 1;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+  }
+  .tab-wrap {
+    .tab-lst {
+      padding: 40px 0 50px;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          position: relative;
+          width: 25%;
+          margin: -1px 0 0 -1px;
+          border: 1px solid #ccc;
+          button {
+            width: 100%;
+            line-height: 60px;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+          }
+          &:hover,
+          &:focus,
+          &.on {
+            z-index: 2;
+            border: 1px solid #000;
+            button {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+    .tab-conts {
+      .tab-cont {
+        display: none;
+        background: #eee;
+        line-height: 50vh;
+        text-align: center;
+        font-size: 30px;
+
+        &.on {
+          display: block;
+        }
+      }
+    }
+  }
+  &.ie9 {
+    .tab-lst {
+      ul {
+        @include clearfix;
+        li {
+          float: left;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>슬라이드형 메뉴</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- JS -->
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--[if !IE]><!-->
+    <script>
+      if (/*@cc_on!@*/ false) {
+        document.documentElement.className += "ie10";
+      }
+    </script>
+    <!--<![endif]-->
+  </head>
+  <body class="mobile04">
+    <main class="main">
+      <h2 class="h2 container">MD의 추천</h2>
+      <nav class="swiper-container md-recom">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><a href="#n">생활용품&middot;리빙</a></li>
+          <li class="swiper-slide"><a href="#n">뷰티&middot;바디케어</a></li>
+          <li class="swiper-slide"><a href="#n">주방용품</a></li>
+          <li class="swiper-slide"><a href="#n">가전제품</a></li>
+          <li class="swiper-slide"><a href="#n">베이비&middot;키즈</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="box">contents</div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// Position
+// prettier-ignore
+@mixin position(
+  $type: absolute, 
+  $t: null, 
+  $b: null, 
+  $l: null, 
+  $r: null, 
+  $z: null,
+  $align: null,
+){
+  position: $type;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+  z-index: $z;
+  @if ($align == c) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if($align == h) {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if($align == v) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+//Responsive Break Point
+// Meida PC
+@mixin w {
+  @media (min-width: #{$pc-width}) {
+    @content;
+  }
+}
+// Meida PC
+@mixin p {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+// Meida Tablet
+@mixin t {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+// Meida Mobile
+@mixin m {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+// 반응형 (직접 브레이크포인트 기입) ex) +mnw(500)
+@mixin mnw($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+@mixin mxw($max-width) {
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}
+@mixin mnw-mxw($min-width, $max-width) {
+  @media only screen and(min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뎁스로 구성된 탭 메뉴</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- JS -->
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <!--[if IE 9]><body class="tab03 ie9"><![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!--><body class="tab03"><!--<![endif]-->
+    <main class="main">
+      <div class="container">
+        <div class="tit-wrap">
+          <h2 class="tit">
+            필요서류안내
+            <span>보험업무 처리 시 필요한 서류 안내입니다.</span>
+          </h2>
+        </div>
+        <div class="tab-wrap">
+          <nav>
+            <ul class="tab-lst depth1">
+              <li class="on">
+                <button>보험금 청구 서류</button>
+                <ul class="tab-lst depth2">
+                  <li class="on"><button>질병관련사고</button></li>
+                  <li><button>상해/운행관련사고</button></li>
+                  <li><button>화재/특정관련사고</button></li>
+                  <li><button>자동차사고</button></li>
+                </ul>
+              </li>
+              <li><button>계약 변경 서류</button></li>
+              <li>
+                <button>자동차 등록 검사 서류</button>
+                <ul class="tab-lst depth2">
+                  <li><button>메뉴 3-1</button></li>
+                  <li><button>메뉴 3-2</button></li>
+                  <li><button>메뉴 3-3</button></li>
+                  <li><button>메뉴 3-4</button></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="tab-conts">
+            <div class="depth1-cont on">
+              <div class="depth2-cont on">질병관련사고</div>
+              <div class="depth2-cont">상해/운행관련사고</div>
+              <div class="depth2-cont">화재/특정관련사고</div>
+              <div class="depth2-cont">자동차사고</div>
+            </div>
+            <div class="depth1-cont">
+              <div class="depth2-cont on">계약 변경 서류</div>
+            </div>
+            <div class="depth1-cont">
+              <div class="depth2-cont on">content 3-1</div>
+              <div class="depth2-cont">content 3-2</div>
+              <div class="depth2-cont">content 3-3</div>
+              <div class="depth2-cont">content 3-4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

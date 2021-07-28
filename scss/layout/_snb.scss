@@ -1,0 +1,396 @@
+/* -----------------
+  SNB
+  ----------------- */
+
+// 하위 메뉴가 없는 사이드 배치형 SNB - type01
+.snb01 {
+  .snb {
+    width: 235px;
+    .snb-tit {
+      background: url(../../img/bg_snb.png) no-repeat center;
+      line-height: 142px;
+      text-align: center;
+      font-size: 27px;
+      color: #ffffff;
+    }
+    .snb-lst {
+      background: #ffffff;
+      li {
+        a {
+          display: block;
+          position: relative;
+          padding: 0 25px;
+          line-height: 60px;
+          font-size: 17px;
+          font-weight: 100;
+          color: #706f6f;
+          &:before {
+            content: "";
+            display: block;
+            @include position($align: v, $r: 0px);
+            width: 10px;
+            height: 2px;
+            background: #e42929;
+            opacity: 0;
+            transition: all 0.3s;
+          }
+          &:hover,
+          &:focus,
+          &.on {
+            color: #e42929;
+            &:before {
+              right: 25px;
+              opacity: 1;
+            }
+          }
+        }
+        & ~ li {
+          border-top: 1px solid #e2e2e2;
+        }
+      }
+    }
+  }
+}
+
+// 하위 메뉴가 아래로 펼쳐지는 사이드 배치형 SNB - type02
+.snb02 {
+  .snb {
+    width: 240px;
+    .snb-tit {
+      line-height: 60px;
+      text-align: left;
+      font-size: 23px;
+      color: #000000;
+    }
+    .snb-lst {
+      border: 1px solid #dddddd;
+      border-bottom: 0;
+      a {
+        display: block;
+        font-weight: 100;
+      }
+      > li {
+        border-bottom: 1px solid #dddddd;
+        > a {
+          padding: 0 20px;
+          background: #c9c9c9;
+          line-height: 56px;
+          font-size: 17px;
+          color: #000000;
+          &.more {
+            position: relative;
+            &:before {
+              content: "";
+              display: block;
+              @include position($align: v, $r: 20px);
+              width: 30px;
+              height: 30px;
+              background-image: url(../../img/ico_arrow_down.png);
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+        > ul {
+          display: none;
+          padding: 15px 0;
+          background: #ffffff;
+          border-top: 1px solid #dddddd;
+          > li {
+            a {
+              padding: 0 30px;
+              line-height: 30px;
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 1px;
+                margin: 0 5px 0 0;
+                background: #000000;
+                vertical-align: 3px;
+              }
+            }
+          }
+        }
+        &.active {
+          > ul {
+            display: block;
+          }
+          > a {
+            background: #c62646;
+            color: #ffffff;
+          }
+        }
+        &.on {
+          .more {
+            &:before {
+              background-image: url(../../img/ico_arrow_up.png);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 하위 메뉴가 옆으로 펼쳐지는 사이드 배치형 SNB - type03
+.snb03 {
+  .header {
+    position: fixed;
+    @include position($type: fixed, $t: 0, $b: 0, $l: 0);
+    width: 180px;
+    padding: 70px 0;
+    background: #1b3b86;
+    text-align: center;
+    color: #ffffff;
+    .logo {
+      a {
+        display: inline-block;
+        width: 107px;
+        height: 55px;
+        background: url(../../img/h1_logo4.png) no-repeat center;
+      }
+    }
+    .snb {
+      a {
+        display: block;
+      }
+      > ul {
+        > li {
+          > a {
+            text-align: center;
+            font-size: 15px;
+            color: #aecbff;
+            line-height: 55px;
+            transition: all 0.3s;
+            &:hover {
+              font-size: 18px;
+            }
+          }
+          .depth2-wrap {
+            @include position($t: 0, $b: 0, $l: 180px);
+            width: 0;
+            overflow: hidden;
+            background: rgba(27, 59, 134, 0.85);
+            > ul {
+              display: flex;
+              flex-wrap: wrap;
+              @include position;
+              width: calc(100% - 80px);
+              opacity: 0;
+              transition: opacity 0.3s;
+              > li {
+                width: 25%;
+                padding: 33px 0;
+                a {
+                  padding: 0 0 0 15px;
+                  text-align: left;
+                  font-weight: 100;
+                }
+                > a {
+                  background: url(../../img/bu_arrow_right.png) no-repeat left center;
+                  color: #aecbff;
+                }
+                > ul {
+                  padding: 10px 0 0;
+                  a {
+                    line-height: 30px;
+                    color: #ffffff;
+                  }
+                }
+                &:nth-child(5n):before {
+                  content: "";
+                  @include position($l: 0, $r: 0);
+                  transform: translateY(-33px);
+                  border-top: 1px dashed #697dad;
+                }
+              }
+            }
+          }
+          &.on .depth2-wrap {
+            width: 780px;
+            padding: 0 40px;
+            > ul {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .util {
+      @include position($b: 70px, $l: 0, $r: 0);
+      button {
+        width: 40px;
+        height: 40px;
+        background: url(../../img/ico_search.png) no-repeat center;
+      }
+      a {
+        display: block;
+        line-height: 40px;
+        font-size: 13px;
+        color: #aecbff;
+      }
+    }
+  }
+  &.ie9 {
+    .depth2-wrap {
+      > ul {
+        @include clearfix;
+        > li {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+// 브레드크럼형 SNB - type04
+.snb04 {
+  .header {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto 30px;
+    background: tomato;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .main {
+    .location {
+      border-top: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee;
+      nav {
+        > ul {
+          display: flex;
+          > li {
+            border-right: 1px solid #eeeeee;
+            button {
+              padding: 0 40px 0 20px;
+              background-image: url(../../img/bu_arrow_down.png);
+              background-repeat: no-repeat;
+              background-position: right 20px center;
+              line-height: 46px;
+              &.on {
+                background-image: url(../../img/ico_arrow_up.png);
+                color: #ec018c;
+              }
+            }
+            > ul {
+              display: none;
+              @include position;
+              min-width: 150px;
+              padding: 5px;
+              background: #ffffff;
+              border: 1px solid #eeeeee;
+              border-radius: 4px;
+              > li {
+                a {
+                  display: block;
+                  padding: 0 15px;
+                  border-radius: 4px;
+                  line-height: 30px;
+                  &:hover,
+                  &:focus {
+                    background: #eeeeee;
+                  }
+                }
+              }
+            }
+          }
+          .home {
+            border-left: 1px solid #eeeeee;
+            a {
+              display: block;
+              width: 46px;
+              height: 46px;
+              background: url(../../img/ico_home.png) no-repeat center;
+            }
+          }
+        }
+      }
+    }
+    .container {
+      .visual {
+        height: 200vh;
+        margin: 30px auto;
+        background: skyblue;
+        color: #ffffff;
+      }
+    }
+  }
+  &.ie9 {
+    .location {
+      nav {
+        > ul {
+          @include clearfix;
+          > li {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 탭 메뉴형 SNB - type05
+.snb05 {
+  .header,
+  .visual,
+  .contents {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+  }
+  .visual,
+  .contents {
+    background: #e9ebed;
+  }
+  .visual {
+    line-height: 280px;
+  }
+  .contents {
+    line-height: 100vh;
+  }
+  .snb {
+    .snb-box {
+      padding: 50px;
+      margin: -40px auto 74px;
+      background: #ffffff;
+      box-shadow: 0 7px 19px 4px rgba(0, 0, 0, 0.2);
+      ul {
+        padding: 0 140px;
+        @include clearfix;
+        li {
+          float: left;
+          padding: 0 60px 0 0;
+          a {
+            display: block;
+            position: relative;
+            z-index: 1;
+            line-height: 90px;
+            font-size: 24px;
+            &:before {
+              content: "";
+              display: block;
+              @include position($align: v, $r: calc(100% - 30px), $z: -1);
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: #84d7e3;
+              opacity: 0;
+              transition: all 0.2s;
+            }
+            &:hover,
+            &.on {
+              &:before {
+                opacity: 1;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

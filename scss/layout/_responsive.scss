@@ -1,0 +1,714 @@
+/* -----------------
+  responsive menu
+  ----------------- */
+
+// GNB의 다자인이 바뀌는 메뉴
+.respon01 {
+  .header {
+    background: #fff;
+    .container {
+      max-width: $container-width;
+      margin: 0 auto;
+      padding: 0 4rem;
+      text-align: center;
+      font-size: 0;
+      @include clearfix;
+      @include t {
+        padding: 0 4rem;
+        text-align: left;
+      }
+      @include m {
+        padding: 0 2rem;
+      }
+      .logo {
+        float: left;
+        a {
+          display: block;
+          width: 10rem;
+          height: 8rem;
+          background: url(/img/h1_logo7.png) no-repeat center / 100% auto;
+          @include t {
+            width: 7rem;
+          }
+        }
+      }
+      .gnb {
+        display: inline-block;
+        position: relative;
+        @include t {
+          @include position($type: fixed, $t: 0, $r: 0, $b: 0, $z: 100);
+          padding: 5rem;
+          background: #fff;
+          transform: translateX(120%);
+          // transition: right 0.2s;
+          &.on {
+            // right: 0;
+            transform: translateX(0);
+          }
+        }
+        .depth1 {
+          @include clearfix;
+          @include t {
+            margin: 2rem 0 0 0;
+          }
+          > li {
+            float: left;
+            padding: 0 1rem;
+            &:hover {
+              > a {
+                color: #000;
+              }
+            }
+            @include t {
+              float: none;
+              padding: 0;
+            }
+            a {
+              display: block;
+              @include t {
+                color: #757575;
+              }
+            }
+            > a {
+              padding: 0 1rem;
+              line-height: 8rem;
+              font-size: 1.6rem;
+              &:focus {
+                color: #000;
+              }
+              @include t {
+                margin: 1rem 0 0 0;
+                padding: 0;
+                line-height: 6rem;
+                font-size: 1.8rem;
+              }
+            }
+            .depth2 {
+              display: none;
+              margin: -1rem 0 0 0;
+              @include t {
+                display: block;
+              }
+              a {
+                line-height: 3rem;
+                font-size: 1.4rem;
+                &:hover,
+                &:focus {
+                  color: #ff4325;
+                }
+              }
+            }
+          }
+        }
+        .btn-close {
+          display: none;
+          @include position($t: 2.5rem, $r: 4rem);
+          width: 2.4rem;
+          height: 2.4rem;
+          background: url(/img/btn_close.png) no-repeat center;
+          @include t {
+            display: block;
+          }
+          @include m {
+            right: 2rem;
+          }
+        }
+      }
+      .btn-allmenu {
+        float: right;
+        width: 3rem;
+        height: 8rem;
+        background: url(/img/btn_nav2.png) no-repeat center / 100% auto;
+        @include t {
+          width: 2.5rem;
+        }
+      }
+    }
+    .dim {
+      display: none;
+      @include position($type: fixed, $t: 0, $r: 0, $b: 0, $l: 0);
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+  .main {
+    background: #d5d5d5;
+    line-height: calc(100vh - 8rem);
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+
+// 검색창의 디자인이 바뀌는 메뉴
+.respon02 {
+  // 공통
+  .wide-container {
+    margin: 0 5rem;
+    @include t {
+      margin: 0;
+    }
+  }
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    @include t {
+      margin: 0 5rem;
+    }
+    @include m {
+      margin: 0 1rem;
+    }
+  }
+  //header
+  .header {
+    @include position($type: fixed, $t: 0, $r: 0, $l: 0);
+    .wide-container {
+      position: relative;
+      padding: 10rem 0 0 0;
+      @include t {
+        padding: 6rem 0 0 0;
+        &:before {
+          content: "";
+          display: block;
+          @include position($t: 11rem, $r: 0, $l: 0);
+          height: 1px;
+          background: #fff;
+        }
+      }
+      .logo {
+        @include position($t: 1.7rem, $l: 0);
+        a {
+          display: block;
+          width: 12em;
+          height: 6rem;
+          background: url(/img/h1_logo8.png) no-repeat center / 100% auto;
+        }
+        @include t {
+          top: 0.8rem;
+          left: 5rem;
+          a {
+            width: 8rem;
+          }
+        }
+        @include m {
+          left: 1rem;
+        }
+      }
+      .gnb {
+        font-size: 1.6rem;
+        color: #fff;
+        ul {
+          @include clearfix;
+          li {
+            float: left;
+            width: 16.666%;
+            a {
+              display: block;
+              line-height: 4rem;
+              text-align: center;
+            }
+          }
+        }
+        .allmenu {
+          @include position($t: 10rem, $r: 5rem);
+          width: 4rem;
+          height: 4rem;
+          background: url(/img/btn_nav3.png) no-repeat center / 80% auto;
+          @include t {
+            top: 6.5rem;
+            background-size: 60% auto;
+          }
+          @include m {
+            right: 1rem;
+          }
+        }
+        @include mnw-mxw($tablet-width, 1400px) {
+          padding: 0 5rem 0 0;
+        }
+        @include t {
+          padding: 0 5rem 0 0;
+          font-size: 1.4rem;
+          ul {
+            li {
+              a {
+                line-height: 5rem;
+              }
+            }
+          }
+        }
+        @include m {
+          padding: 0 3rem 0 0;
+        }
+      }
+      .top {
+        .search {
+          @include position($align: h, $t: 2rem);
+          font-size: 1.6rem;
+          input {
+            float: left;
+            width: 30rem;
+            border-bottom: 2px solid #fff;
+            background: none;
+            line-height: 4rem;
+            text-indent: 1rem;
+            color: #fff;
+            &::placeholder {
+              color: #fff;
+            }
+            &:-ms-input-placeholder {
+              color: #fff;
+            }
+            &[type="search"]::-webkit-search-cancel-button {
+              display: none;
+            }
+          }
+          button {
+            width: 4rem;
+            height: 4.2rem;
+            border-bottom: 2px solid #fff;
+            background: url(/img/btn_search2.png) no-repeat center;
+          }
+          &.on {
+            display: block;
+          }
+          @include t {
+            .search-box {
+              width: 34rem;
+              display: block;
+              @include position($align: c);
+            }
+            display: none;
+            top: 11rem;
+            left: 0;
+            right: 0;
+            height: 11rem;
+            background: #fff;
+            text-align: center;
+            font-size: 1.4rem;
+            transform: none;
+            input {
+              border-bottom: 2px solid #000;
+              color: #898989;
+              &::placeholder {
+                color: #898989;
+              }
+              &:-ms-input-placeholder {
+                color: #898989;
+              }
+            }
+            button {
+              border-bottom: 2px solid #000;
+              background-image: url(/img/btn_search3.png);
+            }
+          }
+        }
+      }
+      .util {
+        @include position($t: 1.8rem, $r: 0);
+        font-size: 1.6rem;
+        color: #fff;
+        > li {
+          display: inline-block;
+          vertical-align: middle;
+          > a,
+          > button {
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            background: no-repeat center;
+            @include t {
+              background-size: 45% auto;
+            }
+          }
+          &.lang {
+            position: relative;
+            > button {
+              width: auto;
+              height: auto;
+              padding: 0.5rem 3rem 0.5rem 1rem;
+              border: 1px solid #bdbdbd;
+              border-radius: 3rem;
+              background: url(/img/bu_arrow_down2.png) no-repeat right 1rem center;
+              font-size: 1.2rem;
+            }
+            ul {
+              display: none;
+              @include position($t: 3.5rem, $r: 0, $l: 0);
+              border: 1px solid #bdbdbd;
+              border-radius: 1rem;
+              background: #7f7f7f;
+              li {
+                a {
+                  display: block;
+                  padding: 1rem;
+                }
+                & ~ li {
+                  border-top: 1px solid #bdbdbd;
+                }
+              }
+            }
+          }
+          &.btn-search > button {
+            display: none;
+            background-image: url(/img/btn_search2.png);
+            @include t {
+              display: inline-block;
+            }
+          }
+          &.mypage > a {
+            background-image: url(/img/ico_member2.png);
+          }
+          &.cart > a {
+            position: relative;
+            background-image: url(/img/ico_cart2.png);
+            .num {
+              @include position($t: 0, $r: -0.5rem);
+              width: 1rem;
+              height: 1rem;
+              padding: 0.5rem;
+              border-radius: 50%;
+              background: red;
+              line-height: 1rem;
+              text-align: center;
+              font-size: 1.2rem;
+              @include t {
+                right: 0;
+                width: 0.5rem;
+                height: 0.5rem;
+                line-height: 0.5rem;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        @include t {
+          right: 5rem;
+        }
+        @include m {
+          right: 1rem;
+        }
+      }
+    }
+  }
+  .main {
+    height: 200vh;
+    background: #7f7f7f;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 5rem;
+    color: #fff;
+  }
+}
+
+// 메가 메뉴의 디자인이 바뀌는 메뉴
+.respon03 {
+  .header {
+    @include position($type: fixed, $t: 4rem, $l: 0, $r: 0);
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    //공통
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      @include p {
+        padding: 0 40px;
+      }
+      @include t {
+        margin: 0 40px;
+      }
+      @include m {
+        margin: 0 20px;
+      }
+    }
+    .gnb {
+      position: relative;
+      padding: 0 8rem;
+      .logo {
+        a {
+          @include position($align: h, $t: 0);
+          display: block;
+          width: 8.4rem;
+          height: 4.1rem;
+          background: url(/img/h1_logo9.png) no-repeat center;
+        }
+      }
+      .gnb-menu {
+        ul {
+          display: flex;
+          li {
+            flex: 1;
+            padding: 0 2rem;
+            a {
+              display: block;
+              line-height: 4rem;
+            }
+          }
+        }
+        @include t {
+          display: none;
+        }
+      }
+      > button {
+        @include position($t: 0);
+        width: 4rem;
+        height: 4rem;
+      }
+      .btn-login {
+        left: 4rem;
+        line-height: 1;
+        font-size: 1.2rem;
+        &:before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2.8rem;
+          background: url(/img/ico_login.png) no-repeat center;
+        }
+        @include t {
+          left: 0;
+        }
+      }
+      .btn-allmenu {
+        right: 4rem;
+        background: url(/img/btn_nav4.png) no-repeat center;
+        @include t {
+          right: 0;
+        }
+      }
+    }
+    .lnb {
+      display: none;
+      @include position($type: fixed, $t: 0, $l: 0, $r: 0);
+      background: #fff;
+      overflow-y: auto;
+      &:before {
+        content: "";
+        display: block;
+        @include position($t: 12rem, $l: 0, $r: 0);
+        border-bottom: 1px solid #ebebeb;
+        z-index: 101;
+        @include t {
+          display: none;
+        }
+      }
+      .container {
+        position: relative;
+        @include t {
+          margin: 0;
+        }
+      }
+      .logo {
+        display: block;
+        margin: 4rem auto;
+        width: 8.4rem;
+        height: 4.1rem;
+        background: url(/img/h1_logo9.png) no-repeat center;
+        @include t {
+          display: none;
+        }
+      }
+      .lnb-menu {
+        padding: 1.5rem 0;
+        .depth1 {
+          display: flex;
+          @include t {
+            display: block;
+          }
+          > li {
+            flex: 1;
+            > a {
+              position: relative;
+              display: block;
+              height: 6rem;
+              padding: 0 3rem;
+              line-height: 6rem;
+              &:before,
+              &:after {
+                content: "";
+                display: inline-block;
+                width: 2.4rem;
+                height: 2.4rem;
+                background: no-repeat center;
+              }
+              &:before {
+                margin-right: 1rem;
+                vertical-align: -0.4rem;
+              }
+              @include t {
+                &:after {
+                  @include position($align: v, $r: 3rem);
+                  background-image: url(/img/ico_arrow_down2.png);
+                  transform: translateY(-50%) rotate(180deg);
+                  transition: all 0.3s;
+                }
+              }
+            }
+            .depth2 {
+              padding: 1rem 0 0 0;
+              font-size: 1.6rem;
+              color: #a2a2a2;
+              a {
+                display: block;
+                line-height: 4rem;
+                span {
+                  position: relative;
+                  display: inline-block;
+                  padding: 0 0.5rem;
+                  &:after {
+                    @include position($b: 0.8rem, $l: 0);
+                    content: "";
+                    width: 0;
+                    height: 0.8rem;
+                    background: #e5e5e5;
+                    z-index: -1;
+                    transition: all 0.3s;
+                  }
+                }
+                &[target="_blank"] {
+                  &:after {
+                    content: "";
+                    display: inline-block;
+                    width: 1rem;
+                    height: 1.6rem;
+                    background: url(/img/ico_blank.png) no-repeat center top;
+                  }
+                }
+                &:hover {
+                  span {
+                    &:after {
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+              @include t {
+                display: none;
+                padding: 2rem 0;
+                border-top: 1px solid #ebebeb;
+                background: #f7f8f9;
+                font-size: 1.4rem;
+                @include clearfix;
+                li {
+                  float: left;
+                  width: 50%;
+                  a {
+                    padding: 1.2rem 0 1.2rem 2.5rem;
+                    line-height: 2rem;
+                  }
+                }
+              }
+            }
+            & ~ li {
+              border-right: 1px solid #ebebeb;
+              @include t {
+                border-left: none;
+              }
+            }
+            &:last-child {
+              border-right: none;
+            }
+            &.btn-login {
+              display: none;
+              a {
+                span {
+                  color: mediumaquamarine;
+                }
+                &:before {
+                  background-image: url(/img/ico_login.png);
+                }
+                &:after {
+                  display: none;
+                }
+              }
+              @include t {
+                display: block;
+              }
+            }
+            &.item01 {
+              a {
+                &:before {
+                  background-image: url(/img/ico_nav10.png);
+                }
+              }
+            }
+            &.item02 {
+              a {
+                &:before {
+                  background-image: url(/img/ico_nav11.png);
+                }
+              }
+            }
+            &.item03 {
+              a {
+                &:before {
+                  background-image: url(/img/ico_nav11.png);
+                }
+              }
+            }
+            &.item04 {
+              a {
+                &:before {
+                  background-image: url(/img/ico_nav13.png);
+                }
+              }
+            }
+            &.item05 {
+              a {
+                &:before {
+                  background-image: url(/img/ico_nav14.png);
+                }
+              }
+            }
+            @include t {
+              border-bottom: 1px solid #ebebeb;
+              &.on {
+                > a {
+                  &:after {
+                    transform: translateY(-50%) rotate(0);
+                  }
+                }
+                .depth2 {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        @include t {
+          padding: 3rem 0 0 0;
+        }
+      }
+      .btn-close {
+        @include position($t: 0, $r: 4rem);
+        width: 4rem;
+        height: 4rem;
+        background: url(/img/btn_close2.png) no-repeat center;
+        @include m {
+          right: 2rem;
+        }
+      }
+      @include t {
+        right: -100%;
+        left: auto;
+        bottom: 0;
+        width: 65%;
+        padding-top: 4rem;
+        text-align: left;
+        &.on {
+          // display: block;
+        }
+      }
+      &.on {
+        display: block;
+      }
+    }
+  }
+  .main {
+    background: #e5e5e5;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 6rem;
+  }
+  &.hidden {
+    overflow: hidden;
+  }
+}

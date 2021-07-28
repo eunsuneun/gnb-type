@@ -1,0 +1,52 @@
+/* -----------------
+  reset
+  ----------------- */
+
+/* prettier-ignore */
+html, body, h1, h2, h3, h4, h5, h6, div, p, blockquote, pre, code, address, ul, ol, li, menu, nav, section, article, aside, dl, dt, dd, table, thead, tbody, tfoot, label, caption, th, td, form, fieldset, legend, hr, input, button, textarea, object, figure, figcaption {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans KR'; font-size: inherit;}
+/* prettier-ignore */
+img, fieldset, input, select, textarea, button {border: none;}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1rem;
+}
+/* HTML5 display-role reset for older browsers */
+// prettier-ignore
+article, aside, details, figcaption,
+figure, footer, header, hgroup,
+main, menu, nav, section, summary {
+	display: block;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+address,
+cite,
+code,
+em {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1;
+}
+button {
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}

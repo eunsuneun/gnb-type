@@ -1,0 +1,452 @@
+/* -----------------
+  모바일 메뉴
+  ----------------- */
+
+// 상단 배치형 모바일 메뉴
+.mobile01 {
+  .header {
+    .top {
+      position: relative;
+      background: #5f0080;
+      .logo {
+        display: flex;
+        height: 4.3rem;
+        a {
+          display: block;
+          width: 5.4rem;
+          height: 2.5rem;
+          margin: auto;
+          background: url(../../img/h1_logo4.png) no-repeat 0 0 / 100% auto;
+        }
+      }
+      .cart {
+        @include position($r: 0, $t: 0);
+        display: block;
+        width: 6rem;
+        height: 4.3rem;
+        background: url(../../img/ico_cart.png) no-repeat center / 2rem;
+      }
+    }
+    .gnb {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #c0bfbe;
+        li {
+          a {
+            display: block;
+            position: relative;
+            padding: 0 0.5rem;
+            line-height: 4rem;
+            font-size: 1.5rem;
+            color: #5e5e5e;
+            &:before {
+              display: none;
+              content: "";
+              @include position($l: 0, $r: 0, $b: 0);
+              height: 0.3rem;
+              background: #5f0080;
+            }
+          }
+          &.on {
+            a {
+              font-weight: bold;
+              color: #5f0080;
+              &:before {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main {
+    .visual {
+      background: #eee;
+      line-height: 50vh;
+      text-align: center;
+      font-size: 5rem;
+    }
+  }
+}
+
+// 하단 고정형 모바일 메뉴
+.mobile02 {
+  .header {
+    @include position($type: fixed, $b: 0, $r: 0, $l: 0);
+    background: #fff;
+    .bottom-nav {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        height: 5rem;
+        li {
+          a {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 5rem;
+            height: 5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #717171;
+            &:before {
+              content: "";
+              display: block;
+              width: 100%;
+              height: 2rem;
+              margin-bottom: 0.3rem;
+              background: no-repeat center / auto 100%;
+            }
+          }
+          &.on {
+            a {
+              font-weight: bold;
+              color: black;
+            }
+          }
+          &.home {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock1.png);
+              }
+            }
+          }
+          &.home.on {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock1_on.png);
+              }
+            }
+          }
+          &.benefix {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock2.png);
+              }
+            }
+          }
+          &.benefix.on {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock2_on.png);
+              }
+            }
+          }
+          &.pay {
+            &:after {
+              content: "";
+              @include position($align: h, $b: 0, $z: 1);
+              width: 7rem;
+              height: 4.2rem;
+              background: #fff;
+            }
+            a {
+              @include position($type: relative, $z: 2, $b: 0.9rem, $align: h);
+              width: 6rem;
+              height: 6rem;
+              font-size: 1.6rem;
+              border: 2px solid #717171;
+              border-radius: 50%;
+              background: #fff;
+              &:before {
+                display: none;
+              }
+            }
+          }
+          &.life {
+            a {
+              &:before {
+                background: url(../../img/ico_dock3.png) no-repeat center / auto 80%;
+              }
+            }
+          }
+          &.life.on {
+            a {
+              &:before {
+                background: url(../../img/ico_dock3_on.png) no-repeat center / auto 80%;
+              }
+            }
+          }
+          &.bank {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock4.png);
+              }
+            }
+          }
+          &.bank.on {
+            a {
+              &:before {
+                background-image: url(../../img/ico_dock4_on.png);
+              }
+            }
+          }
+        }
+        &:before,
+        &:after {
+          content: "";
+          @include position($t: 0, $z: -1);
+          width: calc(50% - 2.5rem);
+          height: 100%;
+          border-top: 1px solid #e2e2e2;
+        }
+        &:before {
+          left: 0;
+          border-right: 1px solid #e2e2e2;
+          border-radius: 0 2rem 0 0;
+        }
+        &:after {
+          right: 0;
+          border-left: 1px solid #e2e2e2;
+          border-radius: 2rem 0 0 0;
+        }
+      }
+    }
+  }
+  .main {
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+
+// 햄버거형 모바일 메뉴
+.mobile03 {
+  background: antiquewhite;
+  .header {
+    background: #111;
+    color: #fff;
+    .gnb {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      > button {
+        width: 3.4rem;
+        height: 5rem;
+      }
+      .hamburger {
+        background: url(/img/btn_nav.png) no-repeat center / 65% auto;
+      }
+      .logo {
+        a {
+          display: block;
+          width: 4rem;
+          height: 5rem;
+          margin: auto;
+          background: url(/img/h1_logo6.png) no-repeat center / 100% auto;
+        }
+      }
+      .alram {
+        background: url(/img/ico_alram.png) no-repeat center / auto 2.5rem;
+      }
+    }
+    .lnb {
+      display: none;
+      @include position($type: fixed, $l: 0, $t: 0, $b: 0, $z: 101);
+      width: 60%;
+      background: #fff;
+      color: #111;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 6rem;
+        padding: 0 1rem;
+        background: #f5f5f5;
+        .btn-login {
+          padding: 0.6rem 1.2rem;
+          border: 1px solid #767676;
+          border-radius: 3rem;
+          background: #fff;
+          line-height: 1;
+          font-size: 1.4rem;
+        }
+        .btn-setting {
+          &:before {
+            content: "";
+            display: block;
+            width: 1.3rem;
+            height: 1.3rem;
+            background: url(/img/ico_setting.png) no-repeat center / 100%;
+            margin: 0 auto 0.5rem auto;
+          }
+        }
+      }
+      .menu {
+        padding-top: 1.5rem;
+        li {
+          a {
+            display: block;
+            padding: 0 0 0 2.5rem;
+            line-height: 4rem;
+            font-size: 1.3rem;
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 1.5rem;
+              height: 1.5rem;
+              margin: 0 2rem 0 0;
+              vertical-align: middle;
+              background: no-repeat center / 100% auto;
+            }
+          }
+          &.icon01 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav1.png);
+                // background-size: auto 100%;
+              }
+            }
+          }
+          &.icon02 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav2.png);
+              }
+            }
+          }
+          &.icon03 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav3.png);
+              }
+            }
+          }
+          &.icon04 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav4.png);
+              }
+            }
+          }
+          &.icon05 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav5.png);
+              }
+            }
+          }
+          &.icon06 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav6.png);
+                background-size: auto 100%;
+              }
+            }
+          }
+          &.icon07 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav7.png);
+                background-size: auto 100%;
+              }
+            }
+          }
+          &.icon08 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav8.png);
+              }
+            }
+          }
+          &.icon09 {
+            a {
+              &:before {
+                background-image: url(/img/ico_nav9.png);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .dim {
+    display: none;
+    @include position($type: fixed, $t: 0, $r: 0, $b: 0, $l: 0, $z: 100);
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &.ie10 {
+    .header {
+      .gnb {
+        @include clearfix;
+        text-align: center;
+        .hamburger {
+          float: left;
+        }
+        .logo {
+          display: inline-block;
+        }
+        .alram {
+          float: right;
+        }
+      }
+      .lnb {
+        .top {
+          padding: 1.5rem 1rem 0;
+          .btn-login {
+            float: left;
+          }
+          .btn-setting {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 슬라이드형 메뉴
+.mobile04 {
+  .main {
+    .h2 {
+      margin-top: 3rem;
+      font-size: 1.8rem;
+    }
+    .md-recom {
+      position: relative;
+      margin: 2rem 0;
+      border-top: 1px solid #f6f6f6;
+      border-bottom: 1px solid #f6f6f6;
+      ul {
+        li {
+          a {
+            display: block;
+            line-height: 4rem;
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+          }
+          a:focus,
+          &.swiper-slide-active a {
+            font-weight: bold;
+            color: #5d007e;
+          }
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        @include position($t: 0, $b: 0, $z: 10);
+        width: 3rem;
+      }
+      &:before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      }
+      &:after {
+        right: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      }
+    }
+    .box {
+      background: #e5e5e5;
+      line-height: 20rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  }
+}

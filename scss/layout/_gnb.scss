@@ -1,0 +1,434 @@
+/* -----------------
+  GNB
+  ----------------- */
+
+// 하위 메뉴가 없는 GNB - type01
+.gnb01 {
+  .header {
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    h1 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0 0 0 26px;
+      a {
+        display: block;
+        width: 99px;
+        height: 69px;
+        background: url(../img/h1_logo0.png) no-repeat center;
+      }
+    }
+    nav ul {
+      text-align: center;
+      font-size: 0;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          padding: 0 47px;
+          line-height: 69px;
+          font-size: 18px;
+          color: #000000;
+        }
+      }
+    }
+    .util {
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include clearfix;
+      .left-box {
+        display: block;
+        float: left;
+        font-size: 0;
+        span {
+          display: inline-block;
+          position: relative;
+          & ~ span {
+            margin-left: 3px;
+            &::before {
+              content: "";
+              @include position($t: 0, $b: 0, $l: -3px);
+              display: block;
+              width: 1px;
+              height: 9px;
+              margin: auto 0;
+              background: #aaaaaa;
+            }
+          }
+          a {
+            display: block;
+            padding: 0 18px;
+            line-height: 69px;
+            font-size: 12px;
+            color: #333333;
+          }
+        }
+      }
+      .right-box {
+        float: left;
+        button {
+          width: 60px;
+          height: 69px;
+          background: url(../img/btn_search.png) no-repeat center #043285;
+        }
+      }
+    }
+  }
+}
+
+// 하위 메뉴가 세로형인 GNB - type02
+.gnb02 {
+  .header {
+    padding: 0 50px;
+    border-bottom: 1px solid #cccccc;
+    @include clearfix;
+    h1 {
+      float: left;
+      padding-top: 11px;
+      a {
+        display: block;
+        width: 99px;
+        height: 45px;
+        background: url(../img/h1_logo.png) no-repeat;
+      }
+    }
+    .right-box {
+      float: right;
+      .gnb {
+        float: left;
+        .depth1-wrap {
+          @include clearfix;
+          .depth1 {
+            float: left;
+            margin-left: 5px;
+            &.on {
+              overflow: visible;
+              > a {
+                color: #ffffff;
+                background: #315665;
+              }
+              .depth2-wrap {
+                height: auto;
+                padding: 20px 0;
+              }
+            }
+            > a {
+              display: block;
+              padding: 0 20px;
+              line-height: 69px;
+              font-size: 18px;
+              color: #000;
+              font-weight: bold;
+              transition: all 0.2s;
+            }
+            .depth2-wrap {
+              // hover로 구현했을 때 : 탭으로 이동이 안됨
+              // opacity: 0;
+              // visibility: hidden;
+              // display: none;
+              transition: all 0.4s;
+              height: 0;
+              overflow: hidden;
+              position: absolute;
+              min-width: 106.25px;
+              padding: 0;
+              background: #315665;
+              color: #fff;
+              .depth2 {
+                a {
+                  display: block;
+                  padding: 0 20px;
+                  line-height: 30px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .util {
+        float: left;
+        padding-top: 17px;
+        font-size: 0;
+        a,
+        button {
+          display: inline-block;
+          position: relative;
+          padding: 10px 20px;
+          font-size: 14px;
+          &:after {
+            content: "";
+            display: block;
+            @include position($t: 0, $b: 0, $l: 0);
+            width: 1px;
+            height: 9px;
+            margin: auto 0;
+            background: #aaaaaa;
+          }
+        }
+        .lang {
+          position: relative;
+          padding-left: 50px;
+          font-size: 16px;
+          &:before {
+            content: "";
+            @include position($t: 50%, $b: 0, $l: 20px);
+            transform: translateY(-50%);
+            display: inline-block;
+            width: 24px;
+            height: 23px;
+            background: url(../img/ico_lang.png) no-repeat center;
+          }
+        }
+        button {
+          width: 68px;
+          height: 32px;
+          background: url(../img/ico_menu.png) no-repeat center;
+        }
+      }
+    }
+  }
+}
+
+// 하위 메뉴가 가로형인 GNB - type03
+.gnb03 {
+  .header {
+    padding: 0 50px;
+    border-bottom: 1px solid #cccccc;
+    .container {
+      position: relative;
+      .logo {
+        @include position($l: 0, $align: v);
+        a {
+          display: block;
+          width: 70px;
+          height: 57px;
+          background: no-repeat center/100% url(../images/even.png);
+        }
+      }
+      .gnb {
+        text-align: center;
+        font-size: 0;
+        > ul {
+          display: inline-block;
+          @include clearfix;
+          > li {
+            float: left;
+            > a {
+              display: block;
+              padding: 0 20px;
+              line-height: 99px;
+              font-size: 18px;
+              color: #043874;
+              span {
+                display: inline-block;
+                position: relative;
+                line-height: 2;
+                &:before {
+                  content: "";
+                  @include position($t: 0, $r: -10px);
+                  width: 7px;
+                  height: 10px;
+                  background: url(../img/ico_rain.png) no-repeat center;
+                  transition: all 0.2s;
+                }
+                &:after {
+                  content: "";
+                  @include position($b: -4px, $l: 0, $r: 0);
+                  height: 4px;
+                  background: #3ac1d3;
+                  transition: all 0.2s;
+                }
+                &:before,
+                &:after {
+                  opacity: 0;
+                }
+              }
+            }
+            .depth2-wrap {
+              height: 0;
+              overflow: hidden;
+              @include position($z: 100);
+              .depth2 {
+                opacity: 0;
+                transition: all 0.3s;
+                li {
+                  float: left;
+                  a {
+                    display: block;
+                    padding: 0 20px;
+                    line-height: 62px;
+                    font-size: 16px;
+                    color: #ffffff;
+                    &:hover {
+                      color: #e4f893;
+                    }
+                  }
+                }
+                &.on {
+                  opacity: 1;
+                }
+              }
+              &.on {
+                height: auto;
+                overflow: visible;
+              }
+            }
+            &:last-child {
+              .depth2 {
+                margin-left: -270px;
+              }
+            }
+            &:hover span:before,
+            &:hover span:after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .util {
+        @include position($r: 0, $align: v);
+        a {
+          display: block;
+          width: 29px;
+          height: 32px;
+          background: url(../img/ico_member.png) no-repeat center;
+          background-size: 70%;
+        }
+      }
+    }
+  }
+  .gnb-bg {
+    display: none;
+    @include position($l: 0, $r: 0);
+    height: 62px;
+    background: linear-gradient(to right, #38cebb, #3db1ed);
+  }
+  &.ie9 .gnb-bg {
+    background: #38cebb;
+  }
+}
+
+// 하위 메뉴가 일체형인 GNB - type04
+.gnb04 {
+  .header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background: #ffffff;
+    .container {
+      position: relative;
+      margin: 0 50px;
+      .logo {
+        @include position($l: 0, $align: v);
+        a {
+          display: block;
+          width: 70px;
+          height: 57px;
+          background: no-repeat center/100% url(../images/even.png);
+        }
+      }
+      .gnb {
+        text-align: center;
+        font-size: 0;
+        a {
+          display: block;
+          letter-spacing: -0.025em;
+        }
+        .depth1 {
+          display: inline-block;
+          > li {
+            position: relative;
+            float: left;
+            width: 165px;
+            > a {
+              line-height: 85px;
+              font-size: 18px;
+              color: #222222;
+              transition: color 0.2s;
+            }
+            &:hover > a {
+              color: #e6223e;
+            }
+            .depth2-wrap {
+              height: 0;
+              overflow: hidden;
+              @include position($l: 0, $z: 100);
+              width: 100%;
+              // height로 제어할 경우 padding을 같이 쓰면 안됨(slideDown,Up을 쓰지 않고 // height로 제어하는 이유는 back-tab 때문
+              // padding: 16px 20px;
+              border-left: 1px solid #d7d7d7;
+              text-align: left;
+              transition: height 0.3s;
+              .depth2 {
+                padding: 16px 20px;
+                opacity: 0;
+                transition: opacity 0.3s;
+                > li {
+                  > a {
+                    line-height: 40px;
+                    font-size: 15px;
+                  }
+                  .depth3 {
+                    > li {
+                      > a {
+                        line-height: 26px;
+                        font-size: 13px;
+                        color: #6a6a6a;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &.wide {
+              width: 220px;
+              .depth2 {
+                width: 50%;
+                float: left;
+              }
+            }
+            &:last-child .depth2-wrap {
+              border-right: 1px solid #d7d7d7;
+            }
+            &.on {
+              .depth2-wrap {
+                height: 430px;
+                .depth2 {
+                  opacity: 1;
+                }
+              }
+            }
+            &:hover .depth2-wrap {
+              background: #ffffff;
+            }
+          }
+        }
+      }
+      .util {
+        @include position($r: 0, $align: v);
+      }
+    }
+    &:after {
+      content: "";
+      @include position($r: 0, $b: 0, $l: 0, $z: -1);
+      height: 2px;
+      background: linear-gradient(to right, #e94e66, #f08925);
+    }
+  }
+  &.ie9 header:after {
+    background: #e94e66;
+  }
+  .gnb-bg {
+    @include position($r: 0, $l: 0);
+    height: 0;
+    background: #ececec;
+    transition: height 0.3s;
+    &.on {
+      height: 430px;
+      border-bottom: 1px solid #d7d7d7;
+    }
+  }
+}
