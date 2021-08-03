@@ -128,7 +128,7 @@ function checkDropOption(e) {
 function snbType03() {
   var depth1 = $(".snb > ul > li");
   depth1.on("mouseover focusin", function () {
-    var y = $(this).offset().top - 13;
+    var y = $(this).offset().top - 11;
     $(this).siblings("li").removeClass("on");
     $(this).addClass("on");
     $(this).find(".depth2-wrap > ul").css("top", y);

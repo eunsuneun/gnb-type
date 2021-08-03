@@ -4,13 +4,16 @@
 
 // 하위 메뉴가 없는 사이드 배치형 SNB - type01
 .snb01 {
+  .header {
+    min-width: $container-width;
+  }
   .snb {
-    width: 235px;
+    width: 23.5rem;
     .snb-tit {
-      background: url(../../img/bg_snb.png) no-repeat center;
-      line-height: 142px;
+      background: url(/img/bg_snb.png) no-repeat center;
+      line-height: 14.2rem;
       text-align: center;
-      font-size: 27px;
+      font-size: 2.7rem;
       color: #ffffff;
     }
     .snb-lst {
@@ -19,16 +22,16 @@
         a {
           display: block;
           position: relative;
-          padding: 0 25px;
-          line-height: 60px;
-          font-size: 17px;
+          padding: 0 2.5rem;
+          line-height: 6rem;
+          font-size: 1.7rem;
           font-weight: 100;
           color: #706f6f;
           &:before {
             content: "";
             display: block;
             @include position($align: v, $r: 0px);
-            width: 10px;
+            width: 1rem;
             height: 2px;
             background: #e42929;
             opacity: 0;
@@ -39,7 +42,7 @@
           &.on {
             color: #e42929;
             &:before {
-              right: 25px;
+              right: 2.5rem;
               opacity: 1;
             }
           }
@@ -50,16 +53,25 @@
       }
     }
   }
+  .fixed ~ .main {
+    padding-top: 8.5rem;
+  }
+  .main .container {
+    padding-top: 5rem;
+  }
 }
 
 // 하위 메뉴가 아래로 펼쳐지는 사이드 배치형 SNB - type02
 .snb02 {
+  .header {
+    min-width: $container-width;
+  }
   .snb {
-    width: 240px;
+    width: 24rem;
     .snb-tit {
-      line-height: 60px;
+      line-height: 6rem;
       text-align: left;
-      font-size: 23px;
+      font-size: 2.3rem;
       color: #000000;
     }
     .snb-lst {
@@ -72,20 +84,20 @@
       > li {
         border-bottom: 1px solid #dddddd;
         > a {
-          padding: 0 20px;
+          padding: 0 2rem;
           background: #c9c9c9;
-          line-height: 56px;
-          font-size: 17px;
+          line-height: 5.6rem;
+          font-size: 1.7rem;
           color: #000000;
           &.more {
             position: relative;
             &:before {
               content: "";
               display: block;
-              @include position($align: v, $r: 20px);
-              width: 30px;
-              height: 30px;
-              background-image: url(../../img/ico_arrow_down.png);
+              @include position($align: v, $r: 2rem);
+              width: 3rem;
+              height: 3rem;
+              background-image: url(/img/ico_arrow_down.png);
               background-repeat: no-repeat;
               background-position: center;
             }
@@ -93,21 +105,21 @@
         }
         > ul {
           display: none;
-          padding: 15px 0;
+          padding: 1.5rem 0;
           background: #ffffff;
           border-top: 1px solid #dddddd;
           > li {
             a {
-              padding: 0 30px;
-              line-height: 30px;
+              padding: 0 3rem;
+              line-height: 3rem;
               &:before {
                 content: "";
                 display: inline-block;
-                width: 4px;
+                width: 0.4rem;
                 height: 1px;
-                margin: 0 5px 0 0;
+                margin: 0 0.5rem 0 0;
                 background: #000000;
-                vertical-align: 3px;
+                vertical-align: 0.3rem;
               }
             }
           }
@@ -124,12 +136,18 @@
         &.on {
           .more {
             &:before {
-              background-image: url(../../img/ico_arrow_up.png);
+              background-image: url(/img/ico_arrow_up.png);
             }
           }
         }
       }
     }
+  }
+  .fixed ~ .main {
+    padding-top: 8.5rem;
+  }
+  .main .container {
+    padding-top: 5rem;
   }
 }
 
@@ -138,17 +156,17 @@
   .header {
     position: fixed;
     @include position($type: fixed, $t: 0, $b: 0, $l: 0);
-    width: 180px;
-    padding: 70px 0;
+    width: 18rem;
+    padding: 7rem 0;
     background: #1b3b86;
     text-align: center;
     color: #ffffff;
     .logo {
       a {
         display: inline-block;
-        width: 107px;
-        height: 55px;
-        background: url(../../img/h1_logo4.png) no-repeat center;
+        width: 10.7rem;
+        height: 5.5rem;
+        background: url(/img/h1_logo4.png) no-repeat center;
       }
     }
     .snb {
@@ -156,19 +174,20 @@
         display: block;
       }
       > ul {
+        margin: 2rem 0 0;
         > li {
           > a {
             text-align: center;
-            font-size: 15px;
+            font-size: 1.6rem;
             color: #aecbff;
-            line-height: 55px;
+            line-height: 5.5rem;
             transition: all 0.3s;
             &:hover {
-              font-size: 18px;
+              font-size: 2rem;
             }
           }
           .depth2-wrap {
-            @include position($t: 0, $b: 0, $l: 180px);
+            @include position($t: 0, $b: 0, $l: 18rem);
             width: 0;
             overflow: hidden;
             background: rgba(27, 59, 134, 0.85);
@@ -176,40 +195,42 @@
               display: flex;
               flex-wrap: wrap;
               @include position;
-              width: calc(100% - 80px);
+              width: calc(100% - 8rem);
               opacity: 0;
               transition: opacity 0.3s;
               > li {
                 width: 25%;
-                padding: 33px 0;
+                padding: 3.3rem 0;
                 a {
-                  padding: 0 0 0 15px;
+                  padding: 0 0 0 1.5rem;
+                  font-size: 1.4rem;
                   text-align: left;
                   font-weight: 100;
                 }
                 > a {
-                  background: url(../../img/bu_arrow_right.png) no-repeat left center;
+                  background: url(/img/bu_arrow_right.png) no-repeat left center;
+                  font-size: 1.5rem;
                   color: #aecbff;
                 }
                 > ul {
-                  padding: 10px 0 0;
+                  padding: 1rem 0 0;
                   a {
-                    line-height: 30px;
+                    line-height: 3rem;
                     color: #ffffff;
                   }
                 }
                 &:nth-child(5n):before {
                   content: "";
                   @include position($l: 0, $r: 0);
-                  transform: translateY(-33px);
+                  transform: translateY(-3rem);
                   border-top: 1px dashed #697dad;
                 }
               }
             }
           }
           &.on .depth2-wrap {
-            width: 780px;
-            padding: 0 40px;
+            width: 78rem;
+            padding: 0 4rem;
             > ul {
               opacity: 1;
             }
@@ -218,16 +239,16 @@
       }
     }
     .util {
-      @include position($b: 70px, $l: 0, $r: 0);
+      @include position($b: 7rem, $l: 0, $r: 0);
       button {
-        width: 40px;
-        height: 40px;
-        background: url(../../img/ico_search.png) no-repeat center;
+        width: 4rem;
+        height: 4rem;
+        background: url(/img/ico_search.png) no-repeat center;
       }
       a {
         display: block;
-        line-height: 40px;
-        font-size: 13px;
+        line-height: 4rem;
+        font-size: 1.3rem;
         color: #aecbff;
       }
     }
@@ -241,6 +262,9 @@
         }
       }
     }
+  }
+  .main .title {
+    line-height: 100vh;
   }
 }
 
@@ -260,36 +284,40 @@
     .location {
       border-top: 1px solid #eeeeee;
       border-bottom: 1px solid #eeeeee;
+      background: #f6f6f6;
       nav {
         > ul {
           display: flex;
           > li {
             border-right: 1px solid #eeeeee;
             button {
-              padding: 0 40px 0 20px;
-              background-image: url(../../img/bu_arrow_down.png);
+              padding: 0 4rem 0 2rem;
+              background-image: url(/img/bu_arrow_down.png);
               background-repeat: no-repeat;
-              background-position: right 20px center;
-              line-height: 46px;
+              background-position: right 2rem center;
+              font-size: 1.6rem;
+              line-height: 4.6rem;
               &.on {
-                background-image: url(../../img/ico_arrow_up.png);
+                background-image: url(/img/ico_arrow_up.png);
+                background-size: 1.2rem;
                 color: #ec018c;
               }
             }
             > ul {
               display: none;
               @include position;
-              min-width: 150px;
-              padding: 5px;
+              min-width: 15rem;
+              padding: 0.5rem;
               background: #ffffff;
               border: 1px solid #eeeeee;
-              border-radius: 4px;
+              border-radius: 0.4rem;
               > li {
                 a {
                   display: block;
-                  padding: 0 15px;
-                  border-radius: 4px;
-                  line-height: 30px;
+                  padding: 0 1.5rem;
+                  border-radius: 0.4rem;
+                  font-size: 1.5rem;
+                  line-height: 3rem;
                   &:hover,
                   &:focus {
                     background: #eeeeee;
@@ -302,21 +330,16 @@
             border-left: 1px solid #eeeeee;
             a {
               display: block;
-              width: 46px;
-              height: 46px;
-              background: url(../../img/ico_home.png) no-repeat center;
+              width: 4.6rem;
+              height: 4.6rem;
+              background: url(/img/ico_home.png) no-repeat center;
             }
           }
         }
       }
     }
-    .container {
-      .visual {
-        height: 200vh;
-        margin: 30px auto;
-        background: skyblue;
-        color: #ffffff;
-      }
+    > .container {
+      background: skyblue;
     }
   }
   &.ie9 {
@@ -336,46 +359,39 @@
 // 탭 메뉴형 SNB - type05
 .snb05 {
   .header,
-  .visual,
-  .contents {
-    text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-  }
-  .visual,
-  .contents {
-    background: #e9ebed;
-  }
   .visual {
-    line-height: 280px;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 20rem;
   }
-  .contents {
-    line-height: 100vh;
+  .container {
+    background: none;
   }
   .snb {
     .snb-box {
-      padding: 50px;
-      margin: -40px auto 74px;
+      padding: 5rem;
+      margin: -4rem auto 7.4rem;
       background: #ffffff;
-      box-shadow: 0 7px 19px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.7rem 1.9rem 0.4rem rgba(0, 0, 0, 0.2);
       ul {
-        padding: 0 140px;
+        padding: 0 14rem;
         @include clearfix;
         li {
           float: left;
-          padding: 0 60px 0 0;
+          padding: 0 6rem 0 0;
           a {
             display: block;
             position: relative;
             z-index: 1;
-            line-height: 90px;
-            font-size: 24px;
+            line-height: 9rem;
+            font-size: 2.4rem;
             &:before {
               content: "";
               display: block;
-              @include position($align: v, $r: calc(100% - 30px), $z: -1);
-              width: 30px;
-              height: 30px;
+              @include position($align: v, $r: calc(100% - 3rem), $z: -1);
+              width: 3rem;
+              height: 3rem;
               border-radius: 50%;
               background: #84d7e3;
               opacity: 0;
@@ -391,6 +407,12 @@
           }
         }
       }
+    }
+  }
+  .main .contents {
+    background: #f4f5f6;
+    .title {
+      line-height: 100vh;
     }
   }
 }

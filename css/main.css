@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
  * @ author 김은선
- * @ used SCSS
+ * @ used SCSS, REM
  * @ since 2021-07-01
  * @ version 1.0.0
  */
@@ -83,11 +83,18 @@ button {
 .main .container {
   max-width: 1200px;
   margin: 0 auto;
+  background: #f4f5f6;
+}
+
+.main .container .title {
+  font-size: 6rem;
+  text-align: center;
+  line-height: 50vh;
 }
 
 @media (min-width: 992px) {
   .main .container {
-    margin: 0 50px;
+    padding: 0 50px;
   }
 }
 
@@ -153,6 +160,10 @@ button {
 /* -----------------
   GNB
   ----------------- */
+.gnb01 {
+  min-width: 1200px;
+}
+
 .gnb01 .header {
   position: relative;
   border-bottom: 1px solid #cccccc;
@@ -162,13 +173,13 @@ button {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 0 0 0 26px;
+  padding: 0 0 0 2.6rem;
 }
 
 .gnb01 .header h1 a {
   display: block;
-  width: 99px;
-  height: 69px;
+  width: 9.9rem;
+  height: 6.9rem;
   background: url(../img/h1_logo0.png) no-repeat center;
 }
 
@@ -183,9 +194,9 @@ button {
 
 .gnb01 .header nav ul li a {
   display: block;
-  padding: 0 47px;
-  line-height: 69px;
-  font-size: 18px;
+  padding: 0 4.7rem;
+  line-height: 6.9rem;
+  font-size: 1.8rem;
   color: #000000;
 }
 
@@ -213,7 +224,7 @@ button {
 }
 
 .gnb01 .header .util .left-box span ~ span {
-  margin-left: 3px;
+  margin-left: 0.3rem;
 }
 
 .gnb01 .header .util .left-box span ~ span::before {
@@ -221,10 +232,10 @@ button {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -3px;
+  left: -0.3rem;
   display: block;
   width: 1px;
-  height: 9px;
+  height: 0.9rem;
   margin: auto 0;
   background: #aaaaaa;
 }
@@ -242,13 +253,17 @@ button {
 }
 
 .gnb01 .header .util .right-box button {
-  width: 60px;
-  height: 69px;
+  width: 6rem;
+  height: 6.9rem;
   background: url(../img/btn_search.png) no-repeat center #043285;
 }
 
+.gnb02 {
+  min-width: 130rem;
+}
+
 .gnb02 .header {
-  padding: 0 50px;
+  padding: 0 5rem;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -260,13 +275,13 @@ button {
 
 .gnb02 .header h1 {
   float: left;
-  padding-top: 11px;
+  padding-top: 1.1rem;
 }
 
 .gnb02 .header h1 a {
   display: block;
-  width: 99px;
-  height: 45px;
+  width: 9.9rem;
+  height: 4.5rem;
   background: url(../img/h1_logo.png) no-repeat;
 }
 
@@ -286,7 +301,7 @@ button {
 
 .gnb02 .header .right-box .gnb .depth1-wrap .depth1 {
   float: left;
-  margin-left: 5px;
+  margin-left: 0.5rem;
 }
 
 .gnb02 .header .right-box .gnb .depth1-wrap .depth1.on {
@@ -300,14 +315,14 @@ button {
 
 .gnb02 .header .right-box .gnb .depth1-wrap .depth1.on .depth2-wrap {
   height: auto;
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 
 .gnb02 .header .right-box .gnb .depth1-wrap .depth1 > a {
   display: block;
-  padding: 0 20px;
-  line-height: 69px;
-  font-size: 18px;
+  padding: 0 2rem;
+  line-height: 6.9rem;
+  font-size: 1.8rem;
   color: #000;
   font-weight: bold;
   -webkit-transition: all 0.2s;
@@ -320,7 +335,7 @@ button {
   height: 0;
   overflow: hidden;
   position: absolute;
-  min-width: 106.25px;
+  min-width: 10.625rem;
   padding: 0;
   background: #315665;
   color: #fff;
@@ -328,14 +343,15 @@ button {
 
 .gnb02 .header .right-box .gnb .depth1-wrap .depth1 .depth2-wrap .depth2 a {
   display: block;
-  padding: 0 20px;
-  line-height: 30px;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
   text-align: center;
 }
 
 .gnb02 .header .right-box .util {
   float: left;
-  padding-top: 17px;
+  padding-top: 1.7rem;
   font-size: 0;
 }
 
@@ -343,8 +359,9 @@ button {
 .gnb02 .header .right-box .util button {
   display: inline-block;
   position: relative;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   font-size: 14px;
+  vertical-align: middle;
 }
 
 .gnb02 .header .right-box .util a:after,
@@ -356,15 +373,15 @@ button {
   bottom: 0;
   left: 0;
   width: 1px;
-  height: 9px;
+  height: 0.9rem;
   margin: auto 0;
   background: #aaaaaa;
 }
 
 .gnb02 .header .right-box .util .lang {
   position: relative;
-  padding-left: 50px;
-  font-size: 16px;
+  padding-left: 5rem;
+  font-size: 1.6rem;
 }
 
 .gnb02 .header .right-box .util .lang:before {
@@ -372,23 +389,27 @@ button {
   position: absolute;
   top: 50%;
   bottom: 0;
-  left: 20px;
+  left: 2rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
-  width: 24px;
-  height: 23px;
+  width: 2.4rem;
+  height: 2.3rem;
   background: url(../img/ico_lang.png) no-repeat center;
 }
 
 .gnb02 .header .right-box .util button {
-  width: 68px;
-  height: 32px;
+  width: 6.8rem;
+  height: 3.2rem;
   background: url(../img/ico_menu.png) no-repeat center;
 }
 
+.gnb03 {
+  min-width: 1200px;
+}
+
 .gnb03 .header {
-  padding: 0 50px;
+  padding: 0 5rem;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -406,9 +427,9 @@ button {
 
 .gnb03 .header .container .logo a {
   display: block;
-  width: 70px;
-  height: 57px;
-  background: no-repeat center/100% url(../images/even.png);
+  width: 7rem;
+  height: 5.7rem;
+  background: no-repeat center/100% url(/img/even_px.png);
 }
 
 .gnb03 .header .container .gnb {
@@ -432,9 +453,9 @@ button {
 
 .gnb03 .header .container .gnb > ul > li > a {
   display: block;
-  padding: 0 20px;
-  line-height: 99px;
-  font-size: 18px;
+  padding: 0 2rem;
+  line-height: 9.9rem;
+  font-size: 1.8rem;
   color: #043874;
 }
 
@@ -448,9 +469,9 @@ button {
   content: "";
   position: absolute;
   top: 0;
-  right: -10px;
-  width: 7px;
-  height: 10px;
+  right: -1rem;
+  width: 0.7rem;
+  height: 1rem;
   background: url(../img/ico_rain.png) no-repeat center;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -459,10 +480,10 @@ button {
 .gnb03 .header .container .gnb > ul > li > a span:after {
   content: "";
   position: absolute;
-  bottom: -4px;
+  bottom: -0.4rem;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 0.4rem;
   background: #3ac1d3;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -491,9 +512,9 @@ button {
 
 .gnb03 .header .container .gnb > ul > li .depth2-wrap .depth2 li a {
   display: block;
-  padding: 0 20px;
-  line-height: 62px;
-  font-size: 16px;
+  padding: 0 2rem;
+  line-height: 6.2rem;
+  font-size: 1.6rem;
   color: #ffffff;
 }
 
@@ -511,7 +532,7 @@ button {
 }
 
 .gnb03 .header .container .gnb > ul > li:last-child .depth2 {
-  margin-left: -270px;
+  margin-left: -27rem;
 }
 
 .gnb03 .header .container .gnb > ul > li:hover span:before,
@@ -529,8 +550,8 @@ button {
 
 .gnb03 .header .container .util a {
   display: block;
-  width: 29px;
-  height: 32px;
+  width: 2.9rem;
+  height: 3.2rem;
   background: url(../img/ico_member.png) no-repeat center;
   background-size: 70%;
 }
@@ -540,7 +561,7 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  height: 62px;
+  height: 6.2rem;
   background: -webkit-gradient(linear, left top, right top, from(#38cebb), to(#3db1ed));
   background: linear-gradient(to right, #38cebb, #3db1ed);
 }
@@ -558,7 +579,7 @@ button {
 
 .gnb04 .header .container {
   position: relative;
-  margin: 0 50px;
+  margin: 0 5rem;
 }
 
 .gnb04 .header .container .logo {
@@ -571,9 +592,9 @@ button {
 
 .gnb04 .header .container .logo a {
   display: block;
-  width: 70px;
-  height: 57px;
-  background: no-repeat center/100% url(../images/even.png);
+  width: 7rem;
+  height: 5.7rem;
+  background: no-repeat center/100% url(/img/even_px.png);
 }
 
 .gnb04 .header .container .gnb {
@@ -593,12 +614,12 @@ button {
 .gnb04 .header .container .gnb .depth1 > li {
   position: relative;
   float: left;
-  width: 165px;
+  width: 16.5rem;
 }
 
 .gnb04 .header .container .gnb .depth1 > li > a {
-  line-height: 85px;
-  font-size: 18px;
+  line-height: 8.5rem;
+  font-size: 1.8rem;
   color: #222222;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
@@ -622,25 +643,25 @@ button {
 }
 
 .gnb04 .header .container .gnb .depth1 > li .depth2-wrap .depth2 {
-  padding: 16px 20px;
+  padding: 1.6rem 2rem;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
 
 .gnb04 .header .container .gnb .depth1 > li .depth2-wrap .depth2 > li > a {
-  line-height: 40px;
-  font-size: 15px;
+  line-height: 4rem;
+  font-size: 1.5rem;
 }
 
 .gnb04 .header .container .gnb .depth1 > li .depth2-wrap .depth2 > li .depth3 > li > a {
-  line-height: 26px;
-  font-size: 13px;
+  line-height: 2.6rem;
+  font-size: 1.3rem;
   color: #6a6a6a;
 }
 
 .gnb04 .header .container .gnb .depth1 > li.wide {
-  width: 220px;
+  width: 22rem;
 }
 
 .gnb04 .header .container .gnb .depth1 > li.wide .depth2 {
@@ -653,7 +674,7 @@ button {
 }
 
 .gnb04 .header .container .gnb .depth1 > li.on .depth2-wrap {
-  height: 430px;
+  height: 43rem;
 }
 
 .gnb04 .header .container .gnb .depth1 > li.on .depth2-wrap .depth2 {
@@ -670,6 +691,7 @@ button {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  font-size: 1.6rem;
 }
 
 .gnb04 .header:after {
@@ -699,22 +721,26 @@ button {
 }
 
 .gnb04 .gnb-bg.on {
-  height: 430px;
+  height: 43rem;
   border-bottom: 1px solid #d7d7d7;
 }
 
 /* -----------------
   SNB
   ----------------- */
+.snb01 .header {
+  min-width: 1200px;
+}
+
 .snb01 .snb {
-  width: 235px;
+  width: 23.5rem;
 }
 
 .snb01 .snb .snb-tit {
-  background: url(../../img/bg_snb.png) no-repeat center;
-  line-height: 142px;
+  background: url(/img/bg_snb.png) no-repeat center;
+  line-height: 14.2rem;
   text-align: center;
-  font-size: 27px;
+  font-size: 2.7rem;
   color: #ffffff;
 }
 
@@ -725,9 +751,9 @@ button {
 .snb01 .snb .snb-lst li a {
   display: block;
   position: relative;
-  padding: 0 25px;
-  line-height: 60px;
-  font-size: 17px;
+  padding: 0 2.5rem;
+  line-height: 6rem;
+  font-size: 1.7rem;
   font-weight: 100;
   color: #706f6f;
 }
@@ -740,7 +766,7 @@ button {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 10px;
+  width: 1rem;
   height: 2px;
   background: #e42929;
   opacity: 0;
@@ -753,7 +779,7 @@ button {
 }
 
 .snb01 .snb .snb-lst li a:hover:before, .snb01 .snb .snb-lst li a:focus:before, .snb01 .snb .snb-lst li a.on:before {
-  right: 25px;
+  right: 2.5rem;
   opacity: 1;
 }
 
@@ -761,14 +787,26 @@ button {
   border-top: 1px solid #e2e2e2;
 }
 
+.snb01 .fixed ~ .main {
+  padding-top: 8.5rem;
+}
+
+.snb01 .main .container {
+  padding-top: 5rem;
+}
+
+.snb02 .header {
+  min-width: 1200px;
+}
+
 .snb02 .snb {
-  width: 240px;
+  width: 24rem;
 }
 
 .snb02 .snb .snb-tit {
-  line-height: 60px;
+  line-height: 6rem;
   text-align: left;
-  font-size: 23px;
+  font-size: 2.3rem;
   color: #000000;
 }
 
@@ -787,10 +825,10 @@ button {
 }
 
 .snb02 .snb .snb-lst > li > a {
-  padding: 0 20px;
+  padding: 0 2rem;
   background: #c9c9c9;
-  line-height: 56px;
-  font-size: 17px;
+  line-height: 5.6rem;
+  font-size: 1.7rem;
   color: #000000;
 }
 
@@ -802,37 +840,37 @@ button {
   content: "";
   display: block;
   position: absolute;
-  right: 20px;
+  right: 2rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-image: url(../../img/ico_arrow_down.png);
+  width: 3rem;
+  height: 3rem;
+  background-image: url(/img/ico_arrow_down.png);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .snb02 .snb .snb-lst > li > ul {
   display: none;
-  padding: 15px 0;
+  padding: 1.5rem 0;
   background: #ffffff;
   border-top: 1px solid #dddddd;
 }
 
 .snb02 .snb .snb-lst > li > ul > li a {
-  padding: 0 30px;
-  line-height: 30px;
+  padding: 0 3rem;
+  line-height: 3rem;
 }
 
 .snb02 .snb .snb-lst > li > ul > li a:before {
   content: "";
   display: inline-block;
-  width: 4px;
+  width: 0.4rem;
   height: 1px;
-  margin: 0 5px 0 0;
+  margin: 0 0.5rem 0 0;
   background: #000000;
-  vertical-align: 3px;
+  vertical-align: 0.3rem;
 }
 
 .snb02 .snb .snb-lst > li.active > ul {
@@ -845,7 +883,15 @@ button {
 }
 
 .snb02 .snb .snb-lst > li.on .more:before {
-  background-image: url(../../img/ico_arrow_up.png);
+  background-image: url(/img/ico_arrow_up.png);
+}
+
+.snb02 .fixed ~ .main {
+  padding-top: 8.5rem;
+}
+
+.snb02 .main .container {
+  padding-top: 5rem;
 }
 
 .snb03 .header {
@@ -854,8 +900,8 @@ button {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 180px;
-  padding: 70px 0;
+  width: 18rem;
+  padding: 7rem 0;
   background: #1b3b86;
   text-align: center;
   color: #ffffff;
@@ -863,33 +909,37 @@ button {
 
 .snb03 .header .logo a {
   display: inline-block;
-  width: 107px;
-  height: 55px;
-  background: url(../../img/h1_logo4.png) no-repeat center;
+  width: 10.7rem;
+  height: 5.5rem;
+  background: url(/img/h1_logo4.png) no-repeat center;
 }
 
 .snb03 .header .snb a {
   display: block;
 }
 
+.snb03 .header .snb > ul {
+  margin: 2rem 0 0;
+}
+
 .snb03 .header .snb > ul > li > a {
   text-align: center;
-  font-size: 15px;
+  font-size: 1.6rem;
   color: #aecbff;
-  line-height: 55px;
+  line-height: 5.5rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 .snb03 .header .snb > ul > li > a:hover {
-  font-size: 18px;
+  font-size: 2rem;
 }
 
 .snb03 .header .snb > ul > li .depth2-wrap {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 180px;
+  left: 18rem;
   width: 0;
   overflow: hidden;
   background: rgba(27, 59, 134, 0.85);
@@ -902,7 +952,7 @@ button {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: absolute;
-  width: calc(100% - 80px);
+  width: calc(100% - 8rem);
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -910,26 +960,28 @@ button {
 
 .snb03 .header .snb > ul > li .depth2-wrap > ul > li {
   width: 25%;
-  padding: 33px 0;
+  padding: 3.3rem 0;
 }
 
 .snb03 .header .snb > ul > li .depth2-wrap > ul > li a {
-  padding: 0 0 0 15px;
+  padding: 0 0 0 1.5rem;
+  font-size: 1.4rem;
   text-align: left;
   font-weight: 100;
 }
 
 .snb03 .header .snb > ul > li .depth2-wrap > ul > li > a {
-  background: url(../../img/bu_arrow_right.png) no-repeat left center;
+  background: url(/img/bu_arrow_right.png) no-repeat left center;
+  font-size: 1.5rem;
   color: #aecbff;
 }
 
 .snb03 .header .snb > ul > li .depth2-wrap > ul > li > ul {
-  padding: 10px 0 0;
+  padding: 1rem 0 0;
 }
 
 .snb03 .header .snb > ul > li .depth2-wrap > ul > li > ul a {
-  line-height: 30px;
+  line-height: 3rem;
   color: #ffffff;
 }
 
@@ -938,14 +990,14 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  -webkit-transform: translateY(-33px);
-          transform: translateY(-33px);
+  -webkit-transform: translateY(-3rem);
+          transform: translateY(-3rem);
   border-top: 1px dashed #697dad;
 }
 
 .snb03 .header .snb > ul > li.on .depth2-wrap {
-  width: 780px;
-  padding: 0 40px;
+  width: 78rem;
+  padding: 0 4rem;
 }
 
 .snb03 .header .snb > ul > li.on .depth2-wrap > ul {
@@ -954,21 +1006,21 @@ button {
 
 .snb03 .header .util {
   position: absolute;
-  bottom: 70px;
+  bottom: 7rem;
   left: 0;
   right: 0;
 }
 
 .snb03 .header .util button {
-  width: 40px;
-  height: 40px;
-  background: url(../../img/ico_search.png) no-repeat center;
+  width: 4rem;
+  height: 4rem;
+  background: url(/img/ico_search.png) no-repeat center;
 }
 
 .snb03 .header .util a {
   display: block;
-  line-height: 40px;
-  font-size: 13px;
+  line-height: 4rem;
+  font-size: 1.3rem;
   color: #aecbff;
 }
 
@@ -980,6 +1032,10 @@ button {
 
 .snb03.ie9 .depth2-wrap > ul > li {
   float: left;
+}
+
+.snb03 .main .title {
+  line-height: 100vh;
 }
 
 .snb04 .header {
@@ -996,6 +1052,7 @@ button {
 .snb04 .main .location {
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
+  background: #f6f6f6;
 }
 
 .snb04 .main .location nav > ul {
@@ -1009,33 +1066,36 @@ button {
 }
 
 .snb04 .main .location nav > ul > li button {
-  padding: 0 40px 0 20px;
-  background-image: url(../../img/bu_arrow_down.png);
+  padding: 0 4rem 0 2rem;
+  background-image: url(/img/bu_arrow_down.png);
   background-repeat: no-repeat;
-  background-position: right 20px center;
-  line-height: 46px;
+  background-position: right 2rem center;
+  font-size: 1.6rem;
+  line-height: 4.6rem;
 }
 
 .snb04 .main .location nav > ul > li button.on {
-  background-image: url(../../img/ico_arrow_up.png);
+  background-image: url(/img/ico_arrow_up.png);
+  background-size: 1.2rem;
   color: #ec018c;
 }
 
 .snb04 .main .location nav > ul > li > ul {
   display: none;
   position: absolute;
-  min-width: 150px;
-  padding: 5px;
+  min-width: 15rem;
+  padding: 0.5rem;
   background: #ffffff;
   border: 1px solid #eeeeee;
-  border-radius: 4px;
+  border-radius: 0.4rem;
 }
 
 .snb04 .main .location nav > ul > li > ul > li a {
   display: block;
-  padding: 0 15px;
-  border-radius: 4px;
-  line-height: 30px;
+  padding: 0 1.5rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
 }
 
 .snb04 .main .location nav > ul > li > ul > li a:hover, .snb04 .main .location nav > ul > li > ul > li a:focus {
@@ -1048,16 +1108,13 @@ button {
 
 .snb04 .main .location nav > ul .home a {
   display: block;
-  width: 46px;
-  height: 46px;
-  background: url(../../img/ico_home.png) no-repeat center;
+  width: 4.6rem;
+  height: 4.6rem;
+  background: url(/img/ico_home.png) no-repeat center;
 }
 
-.snb04 .main .container .visual {
-  height: 200vh;
-  margin: 30px auto;
+.snb04 .main > .container {
   background: skyblue;
-  color: #ffffff;
 }
 
 .snb04.ie9 .location nav > ul:after {
@@ -1071,36 +1128,27 @@ button {
 }
 
 .snb05 .header,
-.snb05 .visual,
-.snb05 .contents {
-  text-align: center;
-  font-size: 60px;
-  font-weight: bold;
-}
-
-.snb05 .visual,
-.snb05 .contents {
-  background: #e9ebed;
-}
-
 .snb05 .visual {
-  line-height: 280px;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 20rem;
 }
 
-.snb05 .contents {
-  line-height: 100vh;
+.snb05 .container {
+  background: none;
 }
 
 .snb05 .snb .snb-box {
-  padding: 50px;
-  margin: -40px auto 74px;
+  padding: 5rem;
+  margin: -4rem auto 7.4rem;
   background: #ffffff;
-  -webkit-box-shadow: 0 7px 19px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 7px 19px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.7rem 1.9rem 0.4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.7rem 1.9rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 .snb05 .snb .snb-box ul {
-  padding: 0 140px;
+  padding: 0 14rem;
 }
 
 .snb05 .snb .snb-box ul:after {
@@ -1111,28 +1159,28 @@ button {
 
 .snb05 .snb .snb-box ul li {
   float: left;
-  padding: 0 60px 0 0;
+  padding: 0 6rem 0 0;
 }
 
 .snb05 .snb .snb-box ul li a {
   display: block;
   position: relative;
   z-index: 1;
-  line-height: 90px;
-  font-size: 24px;
+  line-height: 9rem;
+  font-size: 2.4rem;
 }
 
 .snb05 .snb .snb-box ul li a:before {
   content: "";
   display: block;
   position: absolute;
-  right: calc(100% - 30px);
+  right: calc(100% - 3rem);
   z-index: -1;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background: #84d7e3;
   opacity: 0;
@@ -1145,55 +1193,53 @@ button {
   right: 0;
 }
 
+.snb05 .main .contents {
+  background: #f4f5f6;
+}
+
+.snb05 .main .contents .title {
+  line-height: 100vh;
+}
+
 /* -----------------
   TAB
   ----------------- */
 .tab01 h2 {
-  padding: 90px 0 60px;
+  padding: 9rem 0 6rem;
   line-height: 1;
   text-align: center;
-  font-size: 40px;
+  font-size: 4rem;
   color: #333333;
 }
 
 .tab01 .tab-lst {
-  margin: 0 0 14px;
+  margin: 0 0 1.4rem;
 }
 
 .tab01 .tab-lst ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .tab01 .tab-lst ul li {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  position: relative;
-  border: 1px solid #ddd;
-  margin: 0 0 0 -1px;
-  overflow: hidden;
 }
 
 .tab01 .tab-lst ul li button {
   width: 100%;
   background: #f9f9f9;
-  line-height: 55px;
-  font-size: 17px;
+  line-height: 5.5rem;
+  font-size: 1.7rem;
 }
 
-.tab01 .tab-lst ul li:first-child {
-  border-radius: 10px 0 0 10px;
-}
-
-.tab01 .tab-lst ul li:last-child {
-  border-radius: 0 10px 10px 0;
-}
-
-.tab01 .tab-lst ul li.on {
-  z-index: 2;
-  border-color: #ed008c;
+.tab01 .tab-lst ul li ~ li {
+  border-left: 1px solid #ddd;
 }
 
 .tab01 .tab-lst ul li.on button {
@@ -1206,38 +1252,21 @@ button {
   background: #e5e5e5;
   line-height: 50vh;
   text-align: center;
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 .tab01 .tab-cont ul li.on {
   display: block;
 }
 
-.tab01.ie9 .tab-lst ul:after {
-  content: "";
-  display: block;
-  clear: both;
+.tab01.ie9 .tab-lst ul {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .tab01.ie9 .tab-lst ul li {
-  float: left;
-  width: 33.333%;
-}
-
-.tab01.ie9 .tab-lst ul.no2 li {
-  width: 50%;
-}
-
-.tab01.ie9 .tab-lst ul.no2.no4 li {
-  width: 25%;
-}
-
-.tab01.ie9 .tab-lst ul.no2.no5 li {
-  width: 20%;
-}
-
-.tab01.ie9 .tab-lst ul.no2.no6 li {
-  width: 16.666%;
+  display: table-cell;
 }
 
 .tab02 .container {

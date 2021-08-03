@@ -5,39 +5,31 @@
 // 테두리가 있는 탭 메뉴 - type01
 .tab01 {
   h2 {
-    padding: 90px 0 60px;
+    padding: 9rem 0 6rem;
     line-height: 1;
     text-align: center;
-    font-size: 40px;
+    font-size: 4rem;
     color: #333333;
   }
   .tab-lst {
-    margin: 0 0 14px;
+    margin: 0 0 1.4rem;
     ul {
       display: flex;
+      border: 1px solid #ddd;
+      border-radius: 1rem;
+      overflow: hidden;
       li {
         flex: 1;
-        position: relative;
-        border: 1px solid #ddd;
-        margin: 0 0 0 -1px;
-        overflow: hidden;
         button {
           width: 100%;
           background: #f9f9f9;
-          line-height: 55px;
-          font-size: 17px;
+          line-height: 5.5rem;
+          font-size: 1.7rem;
         }
-        &:first-child {
-          border-radius: 10px 0 0 10px;
+        & ~ li {
+          border-left: 1px solid #ddd;
         }
-        &:last-child {
-          border-radius: 0 10px 10px 0;
-        }
-
         &.on {
-          z-index: 2;
-          border-color: #ed008c;
-
           button {
             background: #ed008c;
             color: #ffffff;
@@ -53,7 +45,7 @@
         background: #e5e5e5;
         line-height: 50vh;
         text-align: center;
-        font-size: 30px;
+        font-size: 3rem;
         &.on {
           display: block;
         }
@@ -63,30 +55,11 @@
   &.ie9 {
     .tab-lst {
       ul {
-        @include clearfix;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
         li {
-          float: left;
-          width: 33.333%;
-        }
-        &.no2 {
-          li {
-            width: 50%;
-          }
-          &.no4 {
-            li {
-              width: 25%;
-            }
-          }
-          &.no5 {
-            li {
-              width: 20%;
-            }
-          }
-          &.no6 {
-            li {
-              width: 16.666%;
-            }
-          }
+          display: table-cell;
         }
       }
     }

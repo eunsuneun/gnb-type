@@ -8,8 +8,14 @@
   .container {
     max-width: $container-width;
     margin: 0 auto;
+    background: #f4f5f6;
+    .title {
+      font-size: 6rem;
+      text-align: center;
+      line-height: 50vh;
+    }
     @include p {
-      margin: 0 50px;
+      padding: 0 50px;
     }
     @include t {
       margin: 0 40px;
