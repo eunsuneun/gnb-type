@@ -79,6 +79,7 @@
       border-bottom: 0;
       a {
         display: block;
+        font-size: 1.6rem;
         font-weight: 100;
       }
       > li {
@@ -87,7 +88,7 @@
           padding: 0 2rem;
           background: #c9c9c9;
           line-height: 5.6rem;
-          font-size: 1.7rem;
+          font-size: 1.8rem;
           color: #000000;
           &.more {
             position: relative;
@@ -358,6 +359,7 @@
 
 // 탭 메뉴형 SNB - type05
 .snb05 {
+  min-width: $container-width;
   .header,
   .visual {
     text-align: center;
