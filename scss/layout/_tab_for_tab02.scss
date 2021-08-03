@@ -114,28 +114,53 @@
     }
     .tab-group {
       .tab-lst {
-        display: flex;
-        padding: 3.5rem 0 7rem;
+        // display: flex;
+        // padding: 3.5rem 0 7rem;
+        // border: 1px solid #d7d7d7;
+        // border-bottom: 0;
         .itm {
           flex: 1;
           position: relative;
-          border: 1px solid #d7d7d7;
+          // border: 1px solid #d7d7d7;
           border-bottom: 1px solid #496fc1;
           margin: 0 0 0 -1px;
           button {
             width: 100%;
             font-size: 1.6rem;
             line-height: 5rem;
-            background: #f9f9f9;
+            background: #fff;
             color: #727272;
+            border-top: 1px solid #ddd;
+          }
+          & ~ .itm {
+            button {
+              border-left: 1px solid #d7d7d7;
+            }
           }
           &.on {
             z-index: 2;
-            border-color: #496fc1;
             border-bottom: none;
             button {
               background: #fff;
+              border-color: #496fc1;
             }
+          }
+          &.on + .itm {
+            button {
+              border-left: 1px solid #496fc1;
+            }
+          }
+          &.on:first-child {
+            border-left: 1px solid #496fc1;
+          }
+          &.on:last-child {
+            border-right: 1px solid #496fc1;
+          }
+          &:first-child {
+            border-left: 1px solid #ddd;
+          }
+          &:last-child {
+            border-right: 1px solid #ddd;
           }
         }
       }
@@ -172,23 +197,17 @@
       table-layout: fixed;
       .itm {
         display: table-cell;
-        float: left;
-        width: 33.3333%;
-      }
-      &.no2 {
-        .itm {
-          width: 50%;
-        }
-      }
-      &.no4 {
-        .itm {
-          width: 25%;
-        }
-      }
-      &.no5 {
-        .itm {
-          width: 20%;
-        }
+        // float: left;
+        // width: 33.3333%;
+        // &.no2 {
+        //   width: 50%;
+        // }
+        // &.no4 {
+        //   width: 25%;
+        // }
+        // &.no5 {
+        //   width: 20%;
+        // }
       }
     }
   }
@@ -196,16 +215,13 @@
 
 // 뎁스로 구성된 탭 메뉴 - type03
 .tab03 {
-  .container {
-    background: none;
-  }
   .tit-wrap {
-    padding: 5rem 2rem;
+    padding: 50px 20px;
     .tit {
-      font-size: 2.7rem;
+      font-size: 27px;
       color: #1a1a1a;
       span {
-        font-size: 1.4rem;
+        font-size: 14px;
         font-weight: 100;
         color: #767676;
       }
@@ -215,29 +231,29 @@
     .depth1 {
       display: flex;
       position: relative;
-      height: 5.2rem;
-      margin-bottom: 7rem;
+      height: 52px;
+      margin-bottom: 70px;
       border-bottom: 1px solid #333;
       > li {
         > button {
-          min-width: 20rem;
+          min-width: 200px;
           margin: 0 0 0 -1px;
-          padding: 0 1.5rem;
-          line-height: 5rem;
+          padding: 0 15px;
+          line-height: 50px;
           border: 1px solid #ccc;
-          border-radius: 1rem 1rem 0 0;
+          border-radius: 10px 10px 0 0;
           border-bottom: 0;
-          font-size: 1.6rem;
+          font-size: 16px;
         }
         .depth2 {
           display: none;
           @include position($l: 0, $r: 0);
           border-bottom: 1px solid #e2e2e2;
           li {
-            padding: 0 1.5rem;
+            padding: 0 15px;
             button {
-              line-height: 5rem;
-              font-size: 1.5rem;
+              line-height: 50px;
+              font-size: 15px;
               color: #767676;
             }
             &.on button {
@@ -245,7 +261,7 @@
               color: green;
               &:after {
                 content: "";
-                @include position($b: 1.2rem);
+                @include position($b: 12px);
                 display: block;
                 width: 100%;
                 height: 1px;
@@ -273,7 +289,7 @@
       background: #eee;
       line-height: 50vh;
       text-align: center;
-      font-size: 5rem;
+      font-size: 50px;
       .depth2-cont {
         display: none;
         &.on {
@@ -289,19 +305,15 @@
 
 // 두 줄 이상인 탭 메뉴 - type04
 .tab04 {
-  .container {
-    background: none;
-  }
   .tit {
-    margin: 5rem 0 0 0;
     line-height: 1;
-    font-size: 2.4rem;
+    font-size: 24px;
     font-weight: normal;
     letter-spacing: -0.5px;
   }
   .tab-wrap {
     .tab-lst {
-      padding: 4rem 0 5rem;
+      padding: 40px 0 50px;
       ul {
         display: flex;
         flex-wrap: wrap;
@@ -312,9 +324,9 @@
           border: 1px solid #ccc;
           button {
             width: 100%;
-            line-height: 6rem;
+            line-height: 60px;
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 18px;
             color: #666;
           }
           &:hover,
@@ -335,7 +347,8 @@
         background: #eee;
         line-height: 50vh;
         text-align: center;
-        font-size: 3rem;
+        font-size: 30px;
+
         &.on {
           display: block;
         }
