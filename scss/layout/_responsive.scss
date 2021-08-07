@@ -220,7 +220,7 @@
             right: 1rem;
           }
         }
-        @include mnw-mxw($tablet-width, 1400px) {
+        @include mnw-mxw($tablet-width, 140rem) {
           padding: 0 5rem 0 0;
         }
         @include t {
@@ -407,16 +407,16 @@
     color: #333;
     //공통
     .container {
-      max-width: 1280px;
+      max-width: 120rem;
       margin: 0 auto;
       @include p {
-        padding: 0 40px;
+        padding: 0 4rem;
       }
       @include t {
-        margin: 0 40px;
+        margin: 0 4rem;
       }
       @include m {
-        margin: 0 20px;
+        margin: 0 2rem;
       }
     }
     .gnb {

@@ -119,7 +119,9 @@
         .itm {
           flex: 1;
           position: relative;
+          // S : 탭 개수와 상관없이 유동적인 레이아웃에서 주석
           border: 1px solid #d7d7d7;
+          // E : 탭 개수와 상관없이 유동적인 레이아웃에서 주석
           border-bottom: 1px solid #496fc1;
           margin: 0 0 0 -1px;
           button {
@@ -166,31 +168,38 @@
         }
       }
     }
+    // .tab-lst {
+    //   width: 100%;
+    //   .itm {
+    //     float: left;
+    //     width: 33.3333%;
+    //   }
+    //   &.no2 {
+    //     .itm {
+    //       width: 50%;
+    //     }
+    //   }
+    //   &.no4 {
+    //     .itm {
+    //       width: 25%;
+    //     }
+    //   }
+    //   &.no5 {
+    //     .itm {
+    //       width: 20%;
+    //     }
+    //   }
+    // }
+    // S : 탭 개수와 상관없이 유동적인 레이아웃
     .tab-lst {
       display: table;
       width: 100%;
       table-layout: fixed;
       .itm {
         display: table-cell;
-        float: left;
-        width: 33.3333%;
-      }
-      &.no2 {
-        .itm {
-          width: 50%;
-        }
-      }
-      &.no4 {
-        .itm {
-          width: 25%;
-        }
-      }
-      &.no5 {
-        .itm {
-          width: 20%;
-        }
       }
     }
+    // E : 탭 개수와 상관없이 유동적인 레이아웃
   }
 }
 

@@ -15,13 +15,13 @@
       line-height: 50vh;
     }
     @include p {
-      padding: 0 50px;
+      padding: 0 5rem;
     }
     @include t {
-      margin: 0 40px;
+      margin: 0 4rem;
     }
     @include m {
-      margin: 0 20px;
+      margin: 0 2rem;
     }
   }
 }
